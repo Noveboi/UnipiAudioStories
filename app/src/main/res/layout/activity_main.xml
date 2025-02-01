@@ -17,18 +17,42 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/background_img" />
+        android:src="@drawable/background_img"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="193dp" />
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin"
         android:fontFamily="@font/fontdiner_swanky"
-        android:text="Welcome, to UnipiAudioStories"
-        android:textSize="@dimen/title_dimen"
-        android:textColor="@color/brown"
+        android:text="@string/general_title"
         android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="@dimen/title_dimen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontdiner_swanky"
+        android:text="Choose a story:"
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="@dimen/subtitle_dimen"
+        android:layout_marginTop="@dimen/title_difference_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="314dp"
+        android:layout_height="195dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="318dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
