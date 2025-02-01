@@ -9,7 +9,7 @@ import java.util.List;
  * Provides methods that cover the 'story' use-cases.
  */
 public class StoryService {
-    public List<Story> GetAllStories() {
+    public List<Story> getAllStories() {
         // TODO!
         return new ArrayList<>();
     }
