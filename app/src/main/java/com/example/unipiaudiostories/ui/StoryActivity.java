@@ -9,11 +9,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.unipiaudiostories.R;
+import com.example.unipiaudiostories.core.TtsService;
 import com.example.unipiaudiostories.databinding.ActivityStoryBinding;
 
 public class StoryActivity extends AppCompatActivity {
 
     ActivityStoryBinding binding;
+    TtsService tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +30,13 @@ public class StoryActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        tts = new TtsService(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        tts.shutdown();
     }
 }
