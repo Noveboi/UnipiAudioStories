@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948612956724",
+    "project_id": "unipi-audio-stories-project",
+    "storage_bucket": "unipi-audio-stories-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948612956724:android:6dfa06e96191c346328061",
+        "android_client_info": {
+          "package_name": "com.example.unipiaudiostories"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOFaQNOLEgXy2S6DKhiVbZLovf3nzo08o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
