@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         RecyclerView storiesList = binding.rvStories;
-        List<Story> stories = new ArrayList<Story>();
-        stories.add(new Story(UUID.randomUUID(), "Dog Cake", "Ok", "Mary", 2025, R.drawable.birthday_dog));
-        stories.add(new Story(UUID.randomUUID(), "Bugs", "ok", "Mary", 2024, R.drawable.bugs));
-        stories.add(new Story(UUID.randomUUID(), "Cat", "Ok", "Mary", 2025, R.drawable.cat));
+        List<Story> stories = new ArrayList<>();
+        stories.add(new Story(1, "Bugs", "ok", "Mary", 2024, R.drawable.bugs));
+        stories.add(new Story(2, "Cat", "Ok", "Mary", 2025, R.drawable.cat));
+        stories.add(new Story(3, "Dog Cake", "Ok", "Mary", 2025, R.drawable.birthday_dog));
 
         StoryRecyclerViewAdapter adapter = new StoryRecyclerViewAdapter(stories);
         storiesList.setAdapter(adapter);

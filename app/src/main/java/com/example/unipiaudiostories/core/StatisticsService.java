@@ -1,6 +1,5 @@
 package com.example.unipiaudiostories.core;
 
-import com.example.unipiaudiostories.domain.Story;
 import com.example.unipiaudiostories.domain.StoryStatistics;
 
 import java.util.ArrayList;
@@ -11,6 +10,8 @@ import java.util.UUID;
  * Retrieves user statistics from local storage
  */
 public class StatisticsService {
+
+
 
     /**
      * Retrieves user statistics for each story.

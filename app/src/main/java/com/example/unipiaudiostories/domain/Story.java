@@ -3,14 +3,14 @@ package com.example.unipiaudiostories.domain;
 import java.util.UUID;
 
 public class Story {
-    UUID id;
+    int id;
     String title;
     String content;
     String author;
     int year;
     int image;
 
-    public Story(UUID id, String title, String content, String author, int year, int image) {
+    public Story(int id, String title, String content, String author, int year, int image) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -19,7 +19,7 @@ public class Story {
         this.image = image;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
