@@ -1,7 +1,5 @@
 package com.example.unipiaudiostories.domain;
 
-import java.util.UUID;
-
 public class Story {
     int id;
     String title;

@@ -1,5 +1,8 @@
 package com.example.unipiaudiostories.domain;
 
+/**
+ * Decorates the Story class with user-related statistics.
+ */
 public class StoryStatistics {
     Story story;
     boolean isFavorite;
