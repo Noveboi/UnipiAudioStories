@@ -12,8 +12,8 @@ import java.util.List;
  */
 public class StoryService {
 
-    FirebaseDatabase database;
-    DatabaseReference storiesReference;
+    private final DatabaseReference storiesReference;
+    private final FirebaseDatabase database;
 
     public StoryService() {
         database = FirebaseDatabase.getInstance();
