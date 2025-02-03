@@ -8,6 +8,7 @@ import com.example.unipiaudiostories.domain.StoryStatistics;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -28,15 +29,20 @@ public class StatisticsService {
      * Retrieves user statistics for each story. The statistics are locally stored using
      * SharedPreferences.
      */
-    public List<StoryStatistics> getStatisticsForStories() {
-        List<Story> stories = storyService.getAllStories();
-        List<StoryStatistics> stats = new ArrayList<>(stories.size());
+    public void getStatisticsForStories(Consumer<List<StoryStatistics>> callback) {
+        storyService.getAllStories(stories -> {
+            if (stories == null) {
+                callback.accept(null);
+                return;
+            }
 
-        for (Story story : stories) {
-            stats.add(getStoryStatistics(story));
-        }
+            List<StoryStatistics> statistics = new ArrayList<>();
+            for (Story story : stories) {
+                statistics.add(getStoryStatistics(story));
+            }
 
-        return stats;
+            callback.accept(statistics);
+        });
     }
 
     /**
@@ -54,11 +60,18 @@ public class StatisticsService {
     /**
      * Get all of the user's favorite stories.
      */
-    public List<Story> getFavoriteStories() {
-        return getStatisticsForStories().stream()
-                .filter(StoryStatistics::isFavorite)
-                .map(StoryStatistics::getStory)
-                .collect(Collectors.toList());
+    public void getFavoriteStories(Consumer<List<Story>> callback) {
+        getStatisticsForStories(stats -> {
+            if (stats == null) {
+                callback.accept(null);
+                return;
+            }
+
+            callback.accept(stats.stream()
+                    .filter(StoryStatistics::isFavorite)
+                    .map(StoryStatistics::getStory)
+                    .collect(Collectors.toList()));
+        });
     }
 
     /**
@@ -76,6 +89,9 @@ public class StatisticsService {
         editor.apply();
     }
 
+    /**
+     * Increment the 'listen count' for the specified story.
+     */
     public void addListen(int storyId) {
         SharedPreferences sp = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
