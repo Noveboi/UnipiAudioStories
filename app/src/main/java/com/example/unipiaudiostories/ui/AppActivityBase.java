@@ -1,7 +1,6 @@
 package com.example.unipiaudiostories.ui;
 
 import android.os.Bundle;
-import android.os.LocaleList;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
