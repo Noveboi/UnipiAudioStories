@@ -8,6 +8,9 @@ public class Story {
     int year;
     int image;
 
+    // Required for Firebase
+    private Story() {}
+
     public Story(int id, String title, String content, String author, int year, int image) {
         this.id = id;
         this.title = title;
