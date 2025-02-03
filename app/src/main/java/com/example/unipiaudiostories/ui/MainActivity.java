@@ -16,9 +16,12 @@ public class MainActivity extends AppActivityBase<ActivityMainBinding> {
     protected void onAfterCreate() {
         RecyclerView storiesList = getBinding().rvStories;
         List<Story> stories = new ArrayList<>();
-        stories.add(new Story(1, "Bugs", "ok", "Mary", 2024, R.drawable.bugs));
-        stories.add(new Story(2, "Cat", "Ok", "Mary", 2025, R.drawable.cat));
-        stories.add(new Story(3, "Dog Cake", "Ok", "Mary", 2025, R.drawable.birthday_dog));
+        stories.add(new Story(1, "Rainbow Rain", "Test", "George Niko", 2025, R.drawable.cat));
+        stories.add(new Story(2, "Piece of Cake!", "Test", "Mary Dimi", 2023, R.drawable.birthday_dog));
+        stories.add(new Story(3, "Beautiful Bugs", "Test", "Konstantinos Sklav", 2024, R.drawable.bugs));
+        stories.add(new Story(4, "A Great Adventure", "Test", "George Niko", 2024, R.drawable.sunset_dog));
+        stories.add(new Story(5, "Pretty Walls", "Test", "Mary Dimi", 2025, R.drawable.drawings_on_walls));
+        stories.add(new Story(6, "Chalk Fantasy", "Test", "Konstantinos Sklav", 2024, R.drawable.chalk_drawing));
 
         StoryRecyclerViewAdapter adapter = new StoryRecyclerViewAdapter(stories);
         storiesList.setAdapter(adapter);
