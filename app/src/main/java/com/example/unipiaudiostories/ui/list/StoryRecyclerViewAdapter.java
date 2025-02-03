@@ -13,13 +13,16 @@ import com.example.unipiaudiostories.domain.Story;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class StoryRecyclerViewAdapter extends RecyclerView.Adapter<StoryRecyclerViewHolder> {
 
     private List<Story> stories;
+    private final Consumer<Story> onClick;
 
-    public StoryRecyclerViewAdapter() {
+    public StoryRecyclerViewAdapter(Consumer<Story> onClickListener) {
         this.stories = new ArrayList<>();
+        onClick = onClickListener;
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -40,7 +43,7 @@ public class StoryRecyclerViewAdapter extends RecyclerView.Adapter<StoryRecycler
 
     @Override
     public void onBindViewHolder(@NonNull StoryRecyclerViewHolder holder, int position) {
-        holder.setStoryItem(stories.get(position));
+        holder.setStoryItem(stories.get(position), onClick);
     }
 
     @Override
