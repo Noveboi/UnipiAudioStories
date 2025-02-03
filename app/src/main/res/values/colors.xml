@@ -3,4 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brown">#261510</color>
+    <color name="pink">#e3789a</color>
+    <color name="lilac">#be78e3</color>
+    <color name="blue">#788ae3</color>
+    <color name="green">#78e39c</color>
+    <color name="orange">#e3b578</color>
+    <color name="red">#e38478</color>
+
+    <color name="white2">#98FFFFFF</color>
 </resources>
