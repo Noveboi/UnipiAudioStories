@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.unipiaudiostories.core.StoryService;
 import com.example.unipiaudiostories.databinding.ActivityMainBinding;
 import com.example.unipiaudiostories.domain.Story;
+import com.example.unipiaudiostories.ui.constants.ActivityIntents;
 import com.example.unipiaudiostories.ui.list.StoryRecyclerViewAdapter;
 
 public class MainActivity extends AppActivityBase<ActivityMainBinding> {
@@ -31,7 +32,7 @@ public class MainActivity extends AppActivityBase<ActivityMainBinding> {
 
     private void navigateToStory(Story story) {
         Intent intent = new Intent(this, StoryActivity.class);
-        intent.putExtra("story_id", story.getId());
+        intent.putExtra(ActivityIntents.STORY_ID, story.getId());
 
         startActivity(intent);
     }
