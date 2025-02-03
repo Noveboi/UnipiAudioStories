@@ -1,5 +1,6 @@
 package com.example.unipiaudiostories.ui.list;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +11,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.unipiaudiostories.R;
 import com.example.unipiaudiostories.domain.Story;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StoryRecyclerViewAdapter extends RecyclerView.Adapter<StoryRecyclerViewHolder> {
 
-    private final List<Story> stories;
+    private List<Story> stories;
 
-    public StoryRecyclerViewAdapter(List<Story> stories) {
+    public StoryRecyclerViewAdapter() {
+        this.stories = new ArrayList<>();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setStories(List<Story> stories) {
         this.stories = stories;
+        notifyDataSetChanged();
     }
 
     @NonNull
