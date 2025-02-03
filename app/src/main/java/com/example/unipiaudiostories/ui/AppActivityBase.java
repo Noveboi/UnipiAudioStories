@@ -1,6 +1,7 @@
 package com.example.unipiaudiostories.ui;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -14,6 +15,9 @@ import androidx.viewbinding.ViewBinding;
 
 import com.example.unipiaudiostories.R;
 import com.example.unipiaudiostories.core.SettingsService;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
 
 public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppCompatActivity {
 
@@ -42,6 +46,20 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
         onAfterCreate();
     }
 
-    protected abstract TBinding inflateBinding();
-    protected void onAfterCreate() { }
+    /**
+     * Use reflection to dynamically invoke ViewBinding.inflate(getLayoutInflater()) and
+     * avoid having to declare an abstract method for this.
+     */
+    private TBinding inflateBinding() {
+        try {
+            ParameterizedType superClass = (ParameterizedType) getClass().getGenericSuperclass();
+            Class<TBinding> bindingClass = (Class<TBinding>) superClass.getActualTypeArguments()[0];
+
+            Method inflateMethod = bindingClass.getMethod("inflate", LayoutInflater.class);
+            return (TBinding) inflateMethod.invoke(null, getLayoutInflater());
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to inflate ViewBinding in " + getClass().getSimpleName(), e);
+        }
+    }
+    protected abstract void onAfterCreate();
 }

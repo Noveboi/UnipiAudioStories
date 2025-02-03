@@ -13,11 +13,6 @@ import java.util.List;
 
 public class MainActivity extends AppActivityBase<ActivityMainBinding> {
     @Override
-    protected ActivityMainBinding inflateBinding() {
-        return ActivityMainBinding.inflate(getLayoutInflater());
-    }
-
-    @Override
     protected void onAfterCreate() {
         RecyclerView storiesList = getBinding().rvStories;
         List<Story> stories = new ArrayList<>();
