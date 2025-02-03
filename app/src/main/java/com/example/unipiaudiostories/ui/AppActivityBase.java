@@ -18,7 +18,7 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
     protected TBinding getBinding() { return binding; }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected final void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
 
@@ -35,5 +35,5 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
     }
 
     protected abstract TBinding inflateBinding();
-    protected abstract void onAfterCreate();
+    protected void onAfterCreate() { }
 }
