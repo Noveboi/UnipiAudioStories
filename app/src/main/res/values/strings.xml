@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">UnipiAudioStories</string>
     <string name="general_title">Welcome, to UnipiAudioStories</string>
+    <string name="choose_story">Choose a story:</string>
+
+    <string name="story_title">Title</string>
+    <string name="author">Author:</string>
+    <string name="author_name">Name</string>
+    <string name="release_date">Release Date:</string>
+    <string name="date">Date</string>
 </resources>

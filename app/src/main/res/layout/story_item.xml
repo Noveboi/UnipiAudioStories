@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="Title"
+        android:text="@string/story_title"
         android:textAlignment="center"
         android:textColor="@color/brown"
         android:textSize="@dimen/sub2_dimen"
@@ -32,31 +32,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivStoryItem" />
 
-    <TextView
-        android:id="@+id/tvStoryAuthor"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="Author: Someone"
-        android:textAlignment="center"
-        android:textColor="@color/brown"
-        android:textSize="@dimen/sub3_dimen"
-        app:layout_constraintBottom_toTopOf="@+id/tvStoryRelease"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/subtitle_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStoryTitle">
 
-    <TextView
-        android:id="@+id/tvStoryRelease"
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/author"
+            android:textAlignment="center"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/sub3_dimen"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <TextView
+            android:id="@+id/tvStoryAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/author_name"
+            android:textAlignment="center"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/sub3_dimen"
+            app:layout_constraintStart_toEndOf="@+id/tvAuthor"
+            tools:layout_editor_absoluteY="157dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/subtitle_margin"
-        android:fontFamily="serif"
-        android:text="Realese Date: 2024"
-        android:textAlignment="center"
-        android:textColor="@color/brown"
-        android:textSize="@dimen/sub3_dimen"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/tvReleaseDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/release_date"
+            android:textAlignment="center"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/sub3_dimen"
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="168dp" />
+
+        <TextView
+            android:id="@+id/tvStoryRelease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="@string/date"
+            android:textAlignment="center"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/sub3_dimen"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="168dp" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
