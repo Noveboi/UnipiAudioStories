@@ -6,8 +6,8 @@
     <dimen name="sub2_dimen">15sp</dimen>
     <dimen name="sub3_dimen">10sp</dimen>
 
-    <dimen name="title_margin">25sp</dimen>
-    <dimen name="subtitle_margin">10sp</dimen>
-    <dimen name="story_img_margin">10sp</dimen>
-    <dimen name="title_difference_margin">100sp</dimen>
+    <dimen name="title_margin">25dp</dimen>
+    <dimen name="subtitle_margin">10dp</dimen>
+    <dimen name="story_img_margin">10dp</dimen>
+    <dimen name="title_difference_margin">100dp</dimen>
 </resources>

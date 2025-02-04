@@ -2,6 +2,7 @@ package com.example.unipiaudiostories.ui;
 
 import android.content.Intent;
 
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,8 +18,9 @@ public class MainActivity extends AppActivityBase<ActivityMainBinding> {
         RecyclerView storiesList = getBinding().rvStories;
 
         StoryRecyclerViewAdapter adapter = new StoryRecyclerViewAdapter(this::navigateToStory);
-        storiesList.setAdapter(adapter);
         storiesList.setLayoutManager(new GridLayoutManager(this, 2));
+        storiesList.setItemAnimator(new DefaultItemAnimator());
+        storiesList.setAdapter(adapter);
 
         StoryService storyService = new StoryService();
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppActivityBase<ActivityMainBinding> {
             if (stories == null)
                 return;
 
-            adapter.setStories(stories);
+            runOnUiThread(() -> adapter.setStories(stories));
         });
     }
 
