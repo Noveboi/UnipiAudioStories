@@ -10,4 +10,5 @@
     <dimen name="subtitle_margin">10dp</dimen>
     <dimen name="story_img_margin">10dp</dimen>
     <dimen name="title_difference_margin">100dp</dimen>
+    <dimen name="story_item_width">150dp</dimen>
 </resources>
