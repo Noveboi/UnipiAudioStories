@@ -34,6 +34,12 @@ public class MainActivity extends AppActivityBase<ActivityMainBinding> {
 
             runOnUiThread(() -> adapter.setStories(stories));
         });
+
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) getBinding().textView.getLayoutParams();
+            params.setMargins(0, 20, 0, 0);
+            getBinding().textView.setLayoutParams(params);
+        }
     }
 
     private void navigateToStory(Story story) {
