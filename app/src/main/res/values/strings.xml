@@ -8,4 +8,8 @@
     <string name="author_name">Name</string>
     <string name="release_date">Release Date:</string>
     <string name="date">Date</string>
+
+    <string name="statistics">Statistics:</string>
+    <string name="story_reads">Reads:</string>
+    <string name="reads_number">Number</string>
 </resources>

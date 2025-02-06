@@ -28,7 +28,7 @@ public class StoryService {
         getAllStories(stories -> {
             if (stories == null || stories.isEmpty()) {
                 List<Story> newStories = new ArrayList<>();
-                newStories.add(new Story(1, "The Cat and The Rainbow Rain", "Test", "George Niko", 2025, R.drawable.cat));
+                newStories.add(new Story(1, "Rainbow Rain Day", "Test", "George Niko", 2025, R.drawable.cat));
                 newStories.add(new Story(2, "Piece of Cake!", "Test", "Mary Dimi", 2023, R.drawable.birthday_dog));
                 newStories.add(new Story(3, "Beautiful Bugs", "Test", "Konstantinos Sklav", 2024, R.drawable.bugs));
                 newStories.add(new Story(4, "A Great Adventure", "Test", "George Niko", 2024, R.drawable.sunset_dog));
