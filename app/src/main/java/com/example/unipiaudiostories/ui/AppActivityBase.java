@@ -1,7 +1,10 @@
 package com.example.unipiaudiostories.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
@@ -43,6 +46,8 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
         LocaleListCompat appLocale = SettingsService.getLocale(this);
         AppCompatDelegate.setApplicationLocales(appLocale);
 
+        bindNavigationBar();
+
         onAfterCreate();
     }
 
@@ -61,5 +66,35 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
             throw new RuntimeException("Failed to inflate ViewBinding in " + getClass().getSimpleName(), e);
         }
     }
+
+    private void bindNavigationBar() {
+        ImageButton homeBtn = findViewById(R.id.nav_home);
+        ImageButton settingsBtn = findViewById(R.id.nav_settings);
+
+        if (homeBtn == null) {
+            Log.e("Nav", "Home Button ID doesn't exist!");
+            return;
+        }
+
+        if (settingsBtn == null) {
+            Log.e("Nav", "Settings Button ID doesn't exist!");
+            return;
+        }
+
+        homeBtn.setOnClickListener(v -> {
+            if (this instanceof MainActivity) return;
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        settingsBtn.setOnClickListener(v -> {
+            if (this instanceof SettingsActivity) return;
+
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        });
+    }
+
     protected abstract void onAfterCreate();
 }
