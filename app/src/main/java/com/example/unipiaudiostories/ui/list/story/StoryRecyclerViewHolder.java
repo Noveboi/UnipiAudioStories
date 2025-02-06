@@ -1,4 +1,4 @@
-package com.example.unipiaudiostories.ui.list;
+package com.example.unipiaudiostories.ui.list.story;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -13,9 +13,6 @@ import com.example.unipiaudiostories.domain.Story;
 import java.util.function.Consumer;
 
 public class StoryRecyclerViewHolder extends RecyclerView.ViewHolder {
-
-    StoryItemBinding binding;
-
     ImageView image;
     TextView title;
     TextView author;
@@ -24,7 +21,7 @@ public class StoryRecyclerViewHolder extends RecyclerView.ViewHolder {
     public StoryRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        binding = StoryItemBinding.bind(itemView);
+        StoryItemBinding binding = StoryItemBinding.bind(itemView);
         image = binding.ivStoryItem;
         title = binding.tvStoryTitle;
         author = binding.tvStoryAuthor;

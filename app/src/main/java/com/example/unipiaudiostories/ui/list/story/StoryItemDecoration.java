@@ -1,4 +1,4 @@
-package com.example.unipiaudiostories.ui.list;
+package com.example.unipiaudiostories.ui.list.story;
 
 import android.graphics.Rect;
 import android.view.View;
