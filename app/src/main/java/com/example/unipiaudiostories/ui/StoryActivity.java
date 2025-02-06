@@ -25,6 +25,7 @@ public class StoryActivity extends AppActivityBase<ActivityStoryBinding> {
 
             getBinding().ivStoryItem.setImageResource(story.getImage());
             getBinding().tvTitle.setText(story.getTitle());
+            getBinding().tvStory.setText(story.getContent());
             getBinding().tvStoryAuthor.setText(story.getAuthor());
             getBinding().tvStoryRelease.setText(String.valueOf(story.getYear()));
 
