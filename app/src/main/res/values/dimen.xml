@@ -6,10 +6,15 @@
     <dimen name="sub2_dimen">15sp</dimen>
     <dimen name="sub3_dimen">10sp</dimen>
 
-    <dimen name="title_margin">25dp</dimen>
+    <dimen name="title_margin">35dp</dimen>
     <dimen name="subtitle_margin">10dp</dimen>
     <dimen name="story_img_margin">10dp</dimen>
-    <dimen name="title_difference_margin">100dp</dimen>
+    <dimen name="title_difference_margin">150dp</dimen>
     <dimen name="story_item_width">150dp</dimen>
     <dimen name="statistics_margin">15dp</dimen>
+    <dimen name="nav_btns_margin">100dp</dimen>
+    <dimen name="settings_margin">200dp</dimen>
+    <dimen name="start_margin">10dp</dimen>
+
+    <dimen name="nav_btns">50dp</dimen>
 </resources>
