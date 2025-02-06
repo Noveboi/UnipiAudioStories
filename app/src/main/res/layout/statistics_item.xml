@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="260sp"
+    android:layout_width="250sp"
     android:layout_height="110sp"
     android:background="@drawable/stroke">
 
@@ -101,8 +101,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="@dimen/story_img_margin"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
