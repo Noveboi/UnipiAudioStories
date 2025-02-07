@@ -9,7 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.unipiaudiostories.R;
+import com.example.unipiaudiostories.core.StatisticsService;
+import com.example.unipiaudiostories.core.StoryService;
 import com.example.unipiaudiostories.domain.Story;
+import com.example.unipiaudiostories.domain.StoryStatistics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +20,7 @@ import java.util.function.Consumer;
 
 public class StoryRecyclerViewAdapter extends RecyclerView.Adapter<StoryRecyclerViewHolder> {
 
-    private List<Story> stories;
+    private List<StoryStatistics> stories;
     private final Consumer<Story> onClick;
 
     public StoryRecyclerViewAdapter(Consumer<Story> onClickListener) {
@@ -26,7 +29,7 @@ public class StoryRecyclerViewAdapter extends RecyclerView.Adapter<StoryRecycler
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void setStories(List<Story> stories) {
+    public void setStories(List<StoryStatistics> stories) {
         this.stories = stories;
         notifyDataSetChanged();
     }

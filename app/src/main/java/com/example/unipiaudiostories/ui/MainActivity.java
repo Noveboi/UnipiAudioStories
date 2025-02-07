@@ -14,6 +14,8 @@ import com.example.unipiaudiostories.ui.constants.ActivityIntents;
 import com.example.unipiaudiostories.ui.list.story.StoryRecyclerViewAdapter;
 import com.example.unipiaudiostories.ui.list.story.StoryRecyclerViewHelper;
 
+import java.util.stream.Collectors;
+
 public class MainActivity extends AppActivityBase<ActivityMainBinding> {
 
     private StatisticsService statisticsService;
@@ -32,7 +34,10 @@ public class MainActivity extends AppActivityBase<ActivityMainBinding> {
             if (stories == null)
                 return;
 
-            runOnUiThread(() -> adapter.setStories(stories));
+            runOnUiThread(() -> adapter.setStories(stories
+                    .stream()
+                    .map(story -> statisticsService.getStoryStatistics(story))
+                    .collect(Collectors.toList())));
         });
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {

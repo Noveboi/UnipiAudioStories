@@ -50,6 +50,7 @@ public class StatsRecyclerViewAdapter extends RecyclerView.Adapter<StatsRecycler
 
     public static class StatsRecyclerViewHolder extends RecyclerView.ViewHolder {
         ImageView storyImage;
+        TextView storyTitle;
         TextView storyAuthor;
         TextView storyReads;
         ImageView isFavoriteImage;
@@ -58,6 +59,7 @@ public class StatsRecyclerViewAdapter extends RecyclerView.Adapter<StatsRecycler
             super(itemView);
 
             StatisticsItemBinding binding = StatisticsItemBinding.bind(itemView);
+            storyTitle = binding.tvStoryTitle;
             storyImage = binding.ivStoryItem;
             storyAuthor = binding.tvStoryAuthor;
             storyReads = binding.tvReadsNumber;
@@ -65,6 +67,7 @@ public class StatsRecyclerViewAdapter extends RecyclerView.Adapter<StatsRecycler
         }
 
         public void setItem(StoryStatistics stats) {
+            storyTitle.setText(stats.getStory().getTitle());
             storyImage.setImageResource(stats.getStory().getImage());
             storyAuthor.setText(stats.getStory().getAuthor());
             storyReads.setText(String.valueOf(stats.getNumberOfListens()));

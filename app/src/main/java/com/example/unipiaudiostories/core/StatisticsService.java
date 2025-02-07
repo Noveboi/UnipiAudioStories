@@ -79,8 +79,9 @@ public class StatisticsService {
     /**
      * Favorite or un-favorite a story. For example, if a story is mark as 'Favorite' by the user,
      * toggleFavorite() will un-favorite the story and vice versa.
+     * @return The boolean value stored.
      */
-    public void toggleFavorite(int storyId) {
+    public boolean toggleFavorite(int storyId) {
         SharedPreferences sp = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
@@ -89,6 +90,8 @@ public class StatisticsService {
         boolean isFavorite = sp.getBoolean(key, false);
         editor.putBoolean(key, !isFavorite);
         editor.apply();
+
+        return !isFavorite;
     }
 
     /**

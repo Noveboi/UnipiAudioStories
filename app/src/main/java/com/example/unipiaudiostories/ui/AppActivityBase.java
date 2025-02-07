@@ -18,6 +18,7 @@ import androidx.viewbinding.ViewBinding;
 
 import com.example.unipiaudiostories.R;
 import com.example.unipiaudiostories.core.SettingsService;
+import com.example.unipiaudiostories.core.StatisticsService;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -69,6 +70,7 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
 
     private void bindNavigationBar() {
         ImageButton homeBtn = findViewById(R.id.nav_home);
+        ImageButton statsBtn = findViewById(R.id.nav_stats);
         ImageButton settingsBtn = findViewById(R.id.nav_settings);
 
         if (homeBtn == null) {
@@ -78,6 +80,11 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
 
         if (settingsBtn == null) {
             Log.e("Nav", "Settings Button ID doesn't exist!");
+            return;
+        }
+
+        if (statsBtn == null) {
+            Log.e("Nav", "Stats Button ID doesn't exist!");
             return;
         }
 
@@ -92,6 +99,13 @@ public abstract class AppActivityBase<TBinding extends ViewBinding> extends AppC
             if (this instanceof SettingsActivity) return;
 
             Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        });
+
+        statsBtn.setOnClickListener(v -> {
+            if (this instanceof StatisticsActivity) return;
+
+            Intent intent = new Intent(this, StatisticsActivity.class);
             startActivity(intent);
         });
     }
