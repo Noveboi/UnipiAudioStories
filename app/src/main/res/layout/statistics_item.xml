@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="250sp"
     android:layout_height="110sp"
-    android:background="@drawable/stroke"
-    android:backgroundTint="@color/transparent_btn">
+    android:background="@drawable/stroke">
 
     <ImageView
         android:id="@+id/ivStoryItem"
@@ -60,11 +59,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:text="@string/author_name"
+            android:text="Name"
             android:textAlignment="center"
             android:textColor="@color/brown"
             android:textSize="@dimen/sub3_dimen"
-            app:layout_constraintStart_toEndOf="@+id/tvAuthor" />
+            app:layout_constraintStart_toEndOf="@+id/tvAuthor"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <LinearLayout
@@ -101,11 +101,10 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="65dp"
+        android:id="@+id/ivIsFavorite"
+        android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="@dimen/story_img_margin"
-        android:backgroundTint="@color/transparent_btn"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

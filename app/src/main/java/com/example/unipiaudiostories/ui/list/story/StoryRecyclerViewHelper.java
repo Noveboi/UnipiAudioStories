@@ -1,4 +1,4 @@
-package com.example.unipiaudiostories.ui.list;
+package com.example.unipiaudiostories.ui.list.story;
 
 import android.content.Context;
 import android.content.res.Resources;

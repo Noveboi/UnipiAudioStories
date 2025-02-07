@@ -67,10 +67,12 @@ public class StatisticsService {
                 return;
             }
 
-            callback.accept(stats.stream()
+            List<Story> favoriteStories = stats.stream()
                     .filter(StoryStatistics::isFavorite)
                     .map(StoryStatistics::getStory)
-                    .collect(Collectors.toList()));
+                    .collect(Collectors.toList());
+
+            callback.accept(favoriteStories);
         });
     }
 

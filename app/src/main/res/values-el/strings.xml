@@ -2,4 +2,15 @@
 <resources>
     <string name="app_name">UnipiAudioStories</string>
     <string name="general_title">Καλώς Ήρθατε, στο UnipiAudioStories</string>
+    <string name="choose_story">Επιλέξτε Ιστορία:</string>
+
+    <string name="story_title">Τίτλος</string>
+    <string name="author">Συγγραφέας:</string>
+    <string name="release_date">Release Date:</string>
+
+    <string name="statistics">Στατιστικά:</string>
+    <string name="story_reads">Αναγνώσεις:</string>
+
+    <string name="settings">Ρυθμίσεις:</string>
+    <string name="choose_lang">Επιλέξτε Γλώσσα:</string>
 </resources>
