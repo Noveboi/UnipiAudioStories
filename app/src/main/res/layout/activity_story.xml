@@ -140,10 +140,22 @@
                 app:layout_constraintStart_toStartOf="@+id/ivStoryBorder"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+            <ImageButton
+                android:id="@+id/imageView2"
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/subtitle_margin"
+                android:layout_marginEnd="@dimen/subtitle_margin"
+                android:backgroundTint="@color/transparent_btn"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="@+id/ivStoryBorder"
+                app:layout_constraintTop_toTopOf="@+id/ivStoryBorder"
+                app:srcCompat="@drawable/empty_star" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -155,22 +167,40 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
+            android:id="@+id/stats_btn"
             android:layout_width="@dimen/nav_btns"
             android:layout_height="@dimen/nav_btns"
-            android:layout_marginStart="@dimen/nav_btns_margin"
-            android:background="@drawable/stroke"
-            android:padding="2dp"
+            android:background="@color/beige"
             android:scaleType="fitXY"
-            android:src="@drawable/home_page_btn" />
+            android:src="@drawable/statistics_icon"
+            app:layout_constraintEnd_toStartOf="@id/home_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <ImageButton
+            android:id="@+id/home_btn"
             android:layout_width="@dimen/nav_btns"
             android:layout_height="@dimen/nav_btns"
-            android:layout_marginStart="@dimen/nav_btns_margin"
-            android:background="@drawable/stroke"
-            android:padding="2dp"
+            android:background="@color/beige"
             android:scaleType="fitXY"
-            android:src="@drawable/settings_icon" />
-    </LinearLayout>
+            android:src="@drawable/home_page_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageButton
+            android:id="@+id/settings_btn"
+            android:layout_width="@dimen/nav_btns"
+            android:layout_height="@dimen/nav_btns"
+            android:background="@color/beige"
+            android:scaleType="fitXY"
+            android:src="@drawable/settings_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/home_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

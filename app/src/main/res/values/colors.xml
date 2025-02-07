@@ -12,4 +12,5 @@
     <color name="red">#e38478</color>
 
     <color name="white2">#98FFFFFF</color>
+    <color name="transparent_btn">#10FFFFFF</color>
 </resources>
