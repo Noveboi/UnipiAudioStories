@@ -102,9 +102,10 @@
 
     <ImageButton
         android:id="@+id/ivIsFavorite"
-        android:layout_width="60dp"
+        android:layout_width="65dp"
         android:layout_height="60dp"
         android:layout_marginEnd="@dimen/story_img_margin"
+        android:backgroundTint="@color/transparent_btn"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
