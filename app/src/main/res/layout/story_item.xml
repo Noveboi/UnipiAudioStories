@@ -102,12 +102,14 @@
             tools:layout_editor_absoluteY="168dp" />
     </LinearLayout>
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton2"
-        android:layout_width="55dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:backgroundTint="@color/transparent_btn"
         android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/star_margin_top"
+        android:layout_marginEnd="@dimen/star_margin_right"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/empty_star" />

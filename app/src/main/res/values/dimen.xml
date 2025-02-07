@@ -15,6 +15,9 @@
     <dimen name="nav_btns_margin">100dp</dimen>
     <dimen name="settings_margin">200dp</dimen>
     <dimen name="start_margin">10dp</dimen>
+    <dimen name="star_margin_start">15dp</dimen>
+    <dimen name="star_margin_right">10dp</dimen>
+    <dimen name="star_margin_top">5dp</dimen>
 
     <dimen name="nav_btns">50dp</dimen>
 </resources>
