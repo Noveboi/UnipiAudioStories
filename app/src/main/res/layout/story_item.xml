@@ -109,7 +109,7 @@
         android:backgroundTint="@color/transparent_btn"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivStoryItem"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/empty_star" />
 
 
